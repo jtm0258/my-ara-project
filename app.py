@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 app = Flask(__name__)
-@app.route("/")
+@app.route("/Home")
 def home():
     return render_template('home.html')
 
@@ -8,5 +8,10 @@ def home():
 def error404(e):
     return render_template('404.html'), 404
 
+@app.route("/Login")
+def Login():
+    return render_template('Login.html')
+
 if __name__ == '__main__':
   app.run(debug=True)
+
