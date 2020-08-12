@@ -12,6 +12,10 @@ def error404(e):
 def Login():
     return render_template('Login.html')
 
+@app.route("/Registration")
+def Registration():
+    return render_template('Registration.html')
+
 if __name__ == '__main__':
   app.run(debug=True)
 
