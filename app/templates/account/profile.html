@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block main %}
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <form method="POST" action="/profile" enctype="multipart/form-data">
+        <fieldset>
+            <div id="legend">
+            <legend class="">login</legend>
+            </div>
+            <div class="control-group">
+            <!-- E-mail -->
+            <label class="control-label" for="firstname">first name</label>
+            <div class="controls">
+                <input type="text" id="firstname" name="firstname" placeholder="firstname" class="input-xlarge">
+            </div>
+            </div>
+        
+            <div class="control-group">
+            <!-- Password-->
+            <label class="control-label" for="lastname">lastname</label>
+            <div class="controls">
+                <input type="text" id="lastname" name="lastname" placeholder="lastname" class="input-xlarge">
+            </div>
+            </div>
+            <div class="control-group">
+                <!-- avatar-->
+                <label class="control-label" for="avatar">avatar</label>
+                <div class="controls">
+                <input type="file" id="avatar" name="avatar" placeholder="avatar" class="input-xlarge">
+                </div>
+            </div>
+            <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success">update profile</button>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
