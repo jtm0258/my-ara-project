@@ -11,3 +11,11 @@
     font-size: 8rem;
     margin-top: 2rem;
 }
+label, input{
+    display: block;
+    width: 150px;
+    float: left;
+}
+.form{
+    display: inline-block;
+}
