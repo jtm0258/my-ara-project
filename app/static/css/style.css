@@ -22,6 +22,11 @@ label, input{
     display: inline-block;
 }
 
-#profile-back{
-    background-color: blue;
+body{
+    background: url();
+}
+
+.back-cover{
+    background-color: white;
+    opacity: 30%;
 }
