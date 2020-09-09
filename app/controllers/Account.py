@@ -16,7 +16,6 @@ def register():
   
     """
 
-    flask_app.logger.info(request)
     if request.method == 'POST':
         error = None
         try:
