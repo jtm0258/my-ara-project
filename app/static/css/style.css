@@ -22,9 +22,6 @@ label, input{
     display: inline-block;
 }
 
-body{
-    background: url();
-}
 
 .back-cover{
     background-color: white;
@@ -41,4 +38,4 @@ body{
     width: 100%;
     height: auto;
 }
-    
+
