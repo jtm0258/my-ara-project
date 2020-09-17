@@ -39,3 +39,10 @@ label, input{
     height: auto;
 }
 
+body{
+    background: url(../img/pawel-czerwinski-W_mfoOi1Elc-unsplash.jpg);
+}
+
+#wellcome-text{
+    padding-top: 30vh;
+}

@@ -5,36 +5,48 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="col-3"></div>
 
-    <form method="POST" action="/profile" enctype="multipart/form-data">
-        <div class="container" class="back-cover" id="profile-boi">
+    <form method="POST" action="/profile" enctype="multipart/form-data" style="color: white;">
+        <div class="col-md-6 offset-md-3" id="profile-boi">
             <fieldset>
                 <div id="legend">
                 <legend class="">update profile</legend>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="firstname">first name</label>
+                <div class="row">
                     <div class="controls">
                         <input type="text" id="firstname" name="firstname" placeholder="firstname" class="input-xlarge">
                     </div>
                 </div>
-            
-                <div class="control-group">
-                    <label class="control-label" for="lastname">lastname</label>
-                    <div class="controls">
-                        <input type="text" id="lastname" name="lastname" placeholder="lastname" class="input-xlarge">
+                </div>
+                    <div class="control-group">
+                        <label class="control-label" for="lastname">lastname</label>
+                    <div class="row">
+                        <div class="controls">
+                            <input type="text" id="lastname" name="lastname" placeholder="lastname" class="input-xlarge">
+                        </div>
                     </div>
                 </div>
-                <img src="{{session['user']['avatar']}}" alt="avatar">
-                <div class="control-group">
+                <div class="row">
+                    <div class="avatar">
+                        <img src="{{session['user']['avatar']}}" alt="avatar">
+                    </div>
+                </div>
+                    <div class="control-group">
                     <!-- avatar-->
                         <label class="control-label" for="avatar">avatar</label>
-                        <div class="controls">
-                            <input type="file" id="avatar" name="avatar" placeholder="avatar" class="input-xlarge">
+                    <div class="row">
+                        <div class="custom-file">
+						    <input type="file" class="custom-file-input" name="image" id="image-upload">
+						    <label class="custom-file-label" for="image-upload">Choose file</label>
                         </div>
+                    </div>
                 </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <button type="submit" class="btn btn-success">update profile</button>
+                <div class="row" style="position: absolute;">
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-success">update profile</button>
+                        </div>
                     </div>
                 </div>
             </fieldset>
