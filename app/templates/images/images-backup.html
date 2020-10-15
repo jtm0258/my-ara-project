@@ -1,0 +1,35 @@
+
+    {% extends "base.html" %}
+    {% block main %}
+    <div id="images" class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<h2 style="color: white;">{{ title }}</h2>
+				{% with messages = get_flashed_messages() %}
+					{# Handle messages here #}
+				{% endwith %}
+				{% if images %}
+					<div class="grid">
+						{% for image_object in images.each() %}
+							{% with image = image_object.val() %}
+							<div class="grid-item" data-image='{{ image|tojson }}'>
+								<img id="photo-pop-up" src="{{ image.upload_location }}" alt="{{ image.description }}">
+								<div class="col-10 pr-0" style="color: white;">
+									<h5>
+										{{ image.name }} 
+										<a href="/images/like/{{ image.id }}">
+											<i class="far fa-heart" data-image="{{ image.id }}"></i>
+										</a>
+									</h5>
+									<p>{{ image.description }}</p>
+									<small>{{ image.user_name }}</small>
+								</div>
+							</div>
+							{% endwith %}
+						{% endfor %}
+						</div>
+				{% endif %}
+			</div>
+		</div>
+    </div>
+    {% endblock %}
