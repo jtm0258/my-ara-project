@@ -15,7 +15,6 @@ class Account():
         Registration method. 
     
         Processes POST request, and registers user in Firebase on success
-
         Parameters: 
             request (obj): The POST request object
     
@@ -143,4 +142,3 @@ class Account():
         
     def logout(self):
         self.user.unset_user()
-
