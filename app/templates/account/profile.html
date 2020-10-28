@@ -15,7 +15,7 @@
                     <label class="control-label" for="firstname">first name</label>
                 <div class="row">
                     <div class="controls">
-                        <input type="text" id="firstname" name="firstname" placeholder="firstname" class="input-xlarge">
+                        <input type="text" id="firstname" name="first_name" required="required" value="{{ session['user']['first_name'] }}" class="input-xlarge">
                     </div>
                 </div>
                 </div>
@@ -23,7 +23,7 @@
                         <label class="control-label" for="lastname">lastname</label>
                     <div class="row">
                         <div class="controls">
-                            <input type="text" id="lastname" name="lastname" placeholder="lastname" class="input-xlarge">
+                            <input type="text" id="lastname" name="last_name" required="required" value="{{ session['user']['last_name'] }}" class="input-xlarge">
                         </div>
                     </div>
                 </div>
