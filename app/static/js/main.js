@@ -1,16 +1,17 @@
 $(document).ready(function(){
 
 	$('i.like').click(function(e) {
-		
+		/** allows the likeing system to work proprly*/ 
 		e.stopPropagation();
 		e.preventDefault();
-
+		/** defines the variables like and image id*/
 		var like = $(this).hasClass('far');
 		var image_id = $(this).data('image');
 		
 		var _this = $(this);
 
 		$.getJSON(
+			/** idenfys what image your are likeing */
 			$SCRIPT_ROOT + '/like',
 
 			{
@@ -18,6 +19,7 @@ $(document).ready(function(){
 				image_id: image_id
 			}, 
 			function(result) {
+				/** changes the aperinces of the heart so that it match whether or not it has been liked */
 				if (like) {
 					_this.removeClass('far');
 					_this.addClass('fas');
@@ -29,16 +31,16 @@ $(document).ready(function(){
 			}
 		);
 	});
-
+	/** Adds A gutter */
 	var $grid = $('.grid').masonry({
 		gutter: 30
 	});
-
+	/** allows you to select a filter */
 	if ($('#filter-select').length > 0 ) {
 		var filter = $('#filter-select').data('filter');
 		$('#filter-select').val(filter);
 	}
-	
+	/** allows you to select a filter */
 	if ($('#category').length > 0 ) {
 		var filter = $('#category').data('category');
 		$('#category').val(filter);

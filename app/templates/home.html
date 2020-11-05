@@ -5,7 +5,7 @@
         <div class="row" style="padding-top: 30vh; padding-bottom: 69vh;">
           <div class="col-md-6 offset-md-3" >
             {% if user.logged_in %}
-              <h3 style="color: white;">wellcome to подделка</h3>
+              <h3 style="color: white;">wellcome to подделка {{ session['user']['first_name'] }}</h3>
             {% else %}
               <h3 style="color: white;">wellcome to подделка</h3>
               <p style="color: white;">please login</p>

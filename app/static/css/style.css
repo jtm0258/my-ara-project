@@ -1,4 +1,4 @@
-
+/* formats the error page's image */
 #error404{
     background: url(../img/error404.jpg) no-repeat right center;
     height: calc(100vh - 56px);
@@ -6,47 +6,41 @@
     position: relative;
     background-size: 626px 626px;
 } 
-
+/* formats the error page's text and margin */
 #error404 h1{
     font-size: 8rem;
     margin-top: 2rem;
 }
-
+/* formats the label and input for the forms */
 label, input{
     display: block;
     width: 150px;
     float: left;
 }
-
+/* formats the grouping for the form */
 .form{
     display: inline-block;
 }
-
-
-.back-cover{
-    background-color: white;
-    opacity: 30%;
-}
-
+/* formats the grid item so they stay apart and stay left */
 .grid-item{
     width: calc(33vw - 30px);
     float: left;
     margin-bottom: 30px;
 }
-
+/* formats the size of the image so it isnt to big */
 .grid-item img{
     width: 100%;
     height: auto;
 }
-
+/* adds the image to the backgrond of all the pages */
 body{
     background: url(../img/pawel-czerwinski-W_mfoOi1Elc-unsplash.jpg);
 }
-
+/* formats the wellcome texts so it isnt stuck to the top of the page */
 #wellcome-text{
     padding-top: 30vh;
 }
-
+/* formats the modal so they all look the same */
 .modal {
     position: fixed;
     top: 0;
@@ -58,33 +52,18 @@ body{
     overflow: hidden;
     outline: 0;
 }
-.modal-content img {
-    width: 100%;
-    height: auto;
-}
-.fa.fa-times{
-    float: right;
-}
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1050;
-    display: none;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    outline: 10px;
-}
+/* formats the modal's image so it not to big and in the right place */
 .modal-body img{
   position: relative;  
   width: 100%;
   height: auto;
 }
+/* formats the exit button so it's on the right */
 .fa.fa-times{
     position: relative;
     float: right;
 }
+/* formats the dropdown text so its white */
 .dropdown-item{
     color: white;
 }

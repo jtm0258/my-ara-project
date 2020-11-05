@@ -6,8 +6,12 @@
 			<div class="col">
 				<h2 style="color: white;">{{ title }}</h2>
 				{% with messages = get_flashed_messages() %}
-					{# Handle messages here #}
-				{% endwith %}
+				{% if messages %}
+					{% for message in messages %}
+					<p>{{ message }}</p>
+					{% endfor %}
+				{% endif %}
+			  {% endwith %}
 				{% if images %}
 					<div class="grid">
 						{% for image_object in images.each() %}

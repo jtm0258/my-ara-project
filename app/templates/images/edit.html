@@ -7,10 +7,14 @@
 				<form class="form-upload" method="POST" enctype=multipart/form-data>
 					<h1 class="mb-3 font-weight-normal">Image edit</h1>
 					{% with messages = get_flashed_messages() %}
-						{# Handle messages here #}
-					{% endwith %}
+					{% if messages %}
+						{% for message in messages %}
+						<p>{{ message }}</p>
+						{% endfor %}
+					{% endif %}
+				  {% endwith %}
 					<figure class="filter-{{ image.filter }}">
-						<img src="{{ image.upload_location }}" alt="{{ image.description }}">
+						<img src="{{ image.upload_location }}" alt="{{ image.description }}" required/>
 					</figure>
 					<div class="form-group">
 						<label>Name</label>

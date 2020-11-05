@@ -41,44 +41,53 @@ class Database():
 
     # Image Requests
     def get_images(self, limit=20, user_id=False):
-        
+        """ defines get_images with a limit of 20 and user id as a boolean"""
         try:
+            # it ether sets image to the list of things afthter the = 
             if (user_id):
                 images = self.db.child("images").order_by_child("user_id").equal_to(user_id).limit_to_first(limit).get()
             else:
-                images = self.db.child("images").order_by_child("created_at").limit_to_first(limit).get()
+                images = self.db.child("images").order_by_child("user_id").limit_to_first(limit).get()
 
             flask_app.logger.info('####################### images val #####################')
             flask_app.logger.info(images.val())
             if isinstance(images.val(), OrderedDict):
+                # returns the images or just false
                 return images
             else:
                 return False
             
         except Exception as err:
+            #checks for an error and if there is one it processis the error
             self.process_error(err)
 
     def get_category_images(self, category, limit=20):
-        try:
+        # defines get_category_images as category with a limit of 20
+            try:
+                #defines images
             images = self.db.child("images").order_by_child("category").equal_to(category).limit_to_first(limit).get()
 
             if isinstance(images.val(), OrderedDict):
+                #returns images or false
                 return images
             else:
                 return False
             
         except Exception as err:
+            #checks for an error and if there is one it processis the error
             self.process_error(err)
         
     def get_image(self, image_id):
-        
+        #defines get_image as image_id 
         error = None
         image = False
         
         try:
+            #trys to set set image to self.db.child("images").child(image_id).get()
             image = self.db.child("images").child(image_id).get()
 
         except Exception as err:
+            # identfy what the propbul and razies an error
             flask_app.logger.info(err)
             error = err
 
@@ -88,6 +97,7 @@ class Database():
             return image.val()
 
     def save_image(self, image_data, image_id):
+        #
         try:
             self.db.child("images").child(image_id).set(image_data)
         except Exception as err:
