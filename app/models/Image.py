@@ -170,7 +170,7 @@ class Image():
         created_at      = request.form['created_at'] 
         upload_location = request.form['upload_location']  
 
-        # Validates required registration fields
+        # Validates required registration fields 
         error = None
         user_id = False
 

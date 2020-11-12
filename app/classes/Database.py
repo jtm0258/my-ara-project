@@ -97,19 +97,21 @@ class Database():
             return image.val()
 
     def save_image(self, image_data, image_id):
-        #
+        #defines save_images so it can or spit out an error
         try:
             self.db.child("images").child(image_id).set(image_data)
         except Exception as err:
             self.process_error(err)
 
     def delete_image(self, image_id):
+        #defines delete_image so you can or spit out an error
         try:
             self.db.child("images").child(image_id).remove()
         except Exception as err:
             self.process_error(err)
 
     def remove_matching_value(self, data, value):
+        #defines remove_matching_value to do exatly what it says on the can
         return_data = []
         for key in data:
             if key != value:
@@ -119,6 +121,7 @@ class Database():
 
     # User and Account Requests
     def register(self, user_data, password):
+    #defines register with userdata password to allow you to register 
         try:
             user_auth = self.auth.create_user_with_email_and_password(user_data['email'], password)
             user_data['localId'] = user_auth['localId']
